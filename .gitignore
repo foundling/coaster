@@ -1,4 +1,4 @@
 node_modules
-.swp
-.swo
-.sw.?
+.*\.swp
+.*\.swo
+.sw\.?
