@@ -1,14 +1,14 @@
 var Work = require('./work');
-
 var app = new Work();
+var port = process.argv[3] || 4000;
 
-// should allow developer to omit GET argument, aka argv len 4 okay.
+// should allow developer to omit GET argument, aka 2 params okay.
 app.define('/', 'GET', function(req, res){
-    res.writeHead(200, {
-        'Content-type':'text/plain'
-    });
-    res.write('HEY THERE!');
-    res.end();
+
+    // let developer define app configs like header values elsewhere with a config object, but the in-callback writeHead call can overwrite the config.
+    res.conclude('hi!');
 });
 
 app.listen(4000);
+
+
