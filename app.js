@@ -5,6 +5,10 @@ var app = new Work();
 
 
 app.define('/test', 'GET', function(req, res) {
+    console.log(res); 
+});
+
+app.define('/', 'GET', function(req, res) {
     console.log(res);
     
 });
