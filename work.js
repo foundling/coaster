@@ -15,6 +15,7 @@ var Work  = function() {
     this._config = {
         'path' : {
             'templates': 'templates',
+            'error_templates' : 'lib/error_templates'
         },
         'encoding' : 'utf-8',
         'mime' : {
@@ -23,8 +24,8 @@ var Work  = function() {
         'head':'',
     };
     this.port = null;
-
 };
+
 
 Work.prototype.define = function(route, httpMethod, callback) {
     if (!httpMethod) {
@@ -38,10 +39,12 @@ Work.prototype.listen = function(port, callback) {
 
     this.port = port;
     var that = this;
+
     this.server = http.createServer(function(req, res) {
-        that.httpMethods[req.method][req.url](req, res);  
-        //executes request hander (httpMethods) upon receiving a req object from client 
-        //console.log(that.httpMethods);
+
+        if (that.httpMethods[req.method][req.url]) that.httpMethods[req.method][req.url](req, res);  
+        else that.renderErrorMessage(res,'400.html');
+
     }).listen(this.port);
 
 };
@@ -73,6 +76,25 @@ Work.prototype.render = function(res,template_name, user){
         }
     }); 
 };
+Work.prototype.renderErrorMessage = function(res, template_name){
+
+    var template_path = [
+        this._config['path']['error_templates'], 
+        '/',
+        template_name,
+    ]
+    .join('');
+
+    fs.readFile(template_path, this._config['encoding'], function(err, data) {
+        // actual error handling should go here;
+        if (err) console.log(err);
+        else {
+            res.write(data);
+            res.end();
+        }
+    }); 
+};
+
 
 Work.prototype.config = function(config_param, value) {
     this._config[config_param] = value;
