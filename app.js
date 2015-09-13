@@ -1,4 +1,4 @@
-var Work = require('./work');
+var Work = require('./lib/work');
 var app = new Work();
 //app.ext.urlValidate = require('url-validate'); // behind the scenes validation
 var port = process.argv[2] || 4000;
