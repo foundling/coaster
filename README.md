@@ -1,7 +1,10 @@
 [![Build Status](https://travis-ci.org/foundling/coaster.svg?branch=modular)](https://travis-ci.org/foundling/coaster)
 ## Coaster.js
 
-Coaster.js is a tiny web framework that provides a template engine (underscore) and some basic restful abstractions to help you to handle all your favorite HTTP requests, including GET, POST, PUT, PATCH and DELETE with the utmost ease. 
+Coaster.js is a tiny web framework that provides a template engine (underscore) and some basic restful abstractions to help you to handle all your favorite HTTP requests, including GET, POST, PUT, PATCH and DELETE with the utmost, magic-free ease. 
+
+#### Hard Dependencies
++ Underscore (hooks into more templating engines forthcoming).
 
 #### Installation Instructions
 
@@ -9,15 +12,15 @@ Coaster.js is a tiny web framework that provides a template engine (underscore) 
 
 #### Basic Usage
 
-````javascript
+````bash
 
-mkdir <app_name>
-cd <app_name>
-touch app.js
-mkdir templates
+$ mkdir <app_name>
+$ cd <app_name>
+$ touch app.js
+$ mkdir templates
 ````
 
-in your app.js file, type the following to get started: 
+Type the following in your app.js file to get started:
 
 ````
 
@@ -32,4 +35,8 @@ app.listen(port);
 
 ````
 
-Then run your app with `node app.js` and open a webbrowser to `localhost:5000/test`.
+Then run your app on the command-line with `node app.js` and point your browser to `localhost:5000/test`.
+
+````
+
+    
