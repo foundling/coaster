@@ -11,7 +11,6 @@ app.define('/test', function(req, res) {
 
 app.define('/', 'GET', function(req, res) {
     res.send('/ test with res.send');
-
 });
 
 app.define('/user', 'GET', function(req, res) {
