@@ -41,10 +41,8 @@ describe('configuration', function(){
 describe('define', function(){
   it('should define a route and request handler', function(){
     app.define('/test3', 'GET', function(req,res){
-      console.log('hello')
-    })
-    expect(typeof app.router.routes['GET']['/test3']).to.eql('function')
-  })
-})
-
-    
+      console.log('hello');
+    });
+    expect(typeof app.router.routes['GET']['/test3']).to.eql('function');
+  });
+});
