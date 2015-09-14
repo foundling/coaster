@@ -1,3 +1,4 @@
+[![Build Status](https://travis-ci.org/foundling/coaster.svg?branch=modular)](https://travis-ci.org/foundling/coaster)
 ## Coaster.js
 
 Coaster.js is a tiny web framework that provides a template engine (underscore) and some basic restful abstractions to help you to handle all your favorite HTTP requests, including GET, POST, PUT, PATCH and DELETE with the utmost ease. 
