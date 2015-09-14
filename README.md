@@ -39,4 +39,6 @@ Then run your app on the command-line with `node app.js` and point your browser 
 
 ````
 
-    
+#### Configuration
+
+Configuration variables can be set with the app.configure method which takes a configuration key and a value argument.  e.g. `````app.configure('mime-types',['application/json'])``` 
