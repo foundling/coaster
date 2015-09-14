@@ -25,14 +25,16 @@
     "router",
     "framework"
   ],
-   "contributors": [{
-  "name": "Phillip Son",
-  "email": "philson3@gmail.com"
-  },
-  {
-  "name": "Alex Ramsdell",
-  "email": "alexramsdell@gmail.com"
-  }],
+  "contributors": [
+    {
+      "name": "Phillip Son",
+      "email": "philson3@gmail.com"
+    },
+    {
+      "name": "Alex Ramsdell",
+      "email": "alexramsdell@gmail.com"
+    }
+  ],
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/foundling/framework/issues"

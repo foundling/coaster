@@ -1,6 +1,6 @@
 // demo file
 
-var Coaster = require('./lib/work');
+var Coaster = require('./lib/coaster');
 var app = new Coaster();
 var port = process.argv[2] || 5000;
 
