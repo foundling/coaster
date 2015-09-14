@@ -1,5 +1,5 @@
 {
-  "name": "coaster.js",
+  "name": "coaster",
   "version": "0.1.0",
   "description": "Routing framework for Node.js",
   "main": "index.js",
