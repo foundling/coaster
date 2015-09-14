@@ -1,9 +1,0 @@
-language: node_js
-branches:
-  only:
-  - angular
-node_js:
-  - "0.10"
-before_script:
-    - npm install -g underscore
-
