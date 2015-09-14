@@ -1,6 +1,6 @@
 // demo file
 
-var Coaster = require('./lib/work');
+var Coaster = require('./lib/coaster');
 var app = new Coaster();
 var port = process.argv[2] || 5000;
 
@@ -17,7 +17,7 @@ app.define('/', 'GET', function(req, res) {
 
 // GET Request with Rendered Template
 app.define('/data', 'GET', function(req, res) {
-    app.render(res, 'index.html', {'data':'1234'});
+    app.render(res, 'index.html', {'name':'Alex'});
 });
 
 // GET Request with a JSON response

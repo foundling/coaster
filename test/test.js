@@ -5,7 +5,7 @@ var http = require('http');
 var fs = require('fs');
 chai.use(chaiHttp);
 
-var Work = require('../lib/work');
+var Work = require('../lib/coaster');
 var app = new Work();
 
 app.define('/test', 'GET', function(req,res){
@@ -46,3 +46,5 @@ describe('define', function(){
     expect(typeof app.router.routes['GET']['/test3']).to.eql('function');
   });
 });
+
+    

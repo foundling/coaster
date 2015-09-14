@@ -1,5 +1,5 @@
 {
-  "name": "coaster.js",
+  "name": "coaster",
   "version": "0.1.0",
   "description": "Routing framework for Node.js",
   "main": "index.js",
@@ -25,14 +25,16 @@
     "router",
     "framework"
   ],
-   "contributors": [{
-  "name": "Phillip Son",
-  "email": "philson3@gmail.com"
-  },
-  {
-  "name": "Alex Ramsdell",
-  "email": "alexramsdell@gmail.com"
-  }],
+  "contributors": [
+    {
+      "name": "Phillip Son",
+      "email": "philson3@gmail.com"
+    },
+    {
+      "name": "Alex Ramsdell",
+      "email": "alexramsdell@gmail.com"
+    }
+  ],
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/foundling/framework/issues"
