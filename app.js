@@ -2,20 +2,47 @@
 
 var Work = require('./lib/work');
 var app = new Work();
+var port = process.argv[2] || 5000;
 
-
-app.define('/test', 'GET', function(req, res) {
-    // need to be able to say 'say' and 'conclude'
-    // this functin needs to run in teh context of an outer function that modifies the res object first
-    console.log(res); 
-    res.conclude();
+// Defaults to GET request
+app.define('/test', function(req, res) {
+    res.send('This is a test of /test');
 });
 
 app.define('/', 'GET', function(req, res) {
-    console.log(res);
-    
+    res.send('/ test with res.send');
+
 });
 
-console.log(app.router.routes);
+app.define('/user', 'GET', function(req, res) {
+    var person = {
+        'name' : 'bob',
+        'id' : '3045'
+    };
+    res.sendJSON(person);
+});
 
-app.listen(5000);
+app.define('/alex', 'GET', function(req, res) {
+    res.sendJSON('{"name":"alex"}');
+});
+
+app.define('/post_test', 'POST', function(req, res) {
+
+    res.send('received your post request, but didnt look at the data yet');
+});
+
+app.define('/post_test', 'POST', function(req, res) {
+    var out = '';
+    req.on('data', function(chunk) {
+        out += chunk; 
+    });
+    req.on('end', function() {
+        res.send(out);
+    });
+    console.log(req.body);
+}); 
+
+app.listen(port, function() {
+    console.log('CONFIG VALUES:');
+    console.log(JSON.stringify(app._config, undefined, 2));
+});
