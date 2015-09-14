@@ -31,3 +31,4 @@ app.listen(port);
 
 ````
 
+Then run your app with `node app.js` and open a webbrowser to `localhost:5000/test`.
