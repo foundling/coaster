@@ -17,10 +17,7 @@ app.define('/', 'GET', function(req, res) {
 
 // GET Request with Rendered Template
 app.define('/data', 'GET', function(req, res) {
-    var data = {
-        'data':'1234' 
-    };
-    app.render(res, 'index.html', data);
+    app.render(res, 'index.html', {'data':'1234'});
 });
 
 // GET Request with a JSON response
