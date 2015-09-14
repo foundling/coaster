@@ -14,8 +14,11 @@ mkdir <app_name>
 cd <app_name>
 touch app.js
 mkdir templates
+````
 
-in your app.js file, 
+in your app.js file, type the following to get started: 
+
+````
 
 var Coaster = require('./lib/coaster');
 var app = new Coaster();
