@@ -5,31 +5,34 @@ var http = require('http');
 var fs = require('fs');
 chai.use(chaiHttp);
 
-var Work = require('../lib/coaster');
-var app = new Work();
+var Coaster = require('../lib/coaster');
+var app = new Coaster();
+var port = process.argv[2] || 5000;
 
-app.define('/test', 'GET', function(req,res){
-  res.write('hello phillip');
+app.define('/mochatest', 'GET', function(req,res){
+  res.send('mocha working');
 });
-app.listen(5000);
-
+app.listen(port);
 
 describe('app', function(){
   var response;
   var request;
   before(function(done){
     chai.request('localHost:5000')
-    .get('/test')
+    .get('/mochatest')
     .end(function(err, res){
       error = err;
       response = res;
+      console.log(res);
       done();
     });
   });
-  it('return a reponse object', function(){
+  it('should return a response object', function(){
     expect(typeof response).to.eql('object');
+    expect(response.text).to.eql('mocha working');
   });
 });
+
 
 describe('configuration', function(){
   it('should change config parameters', function(){
